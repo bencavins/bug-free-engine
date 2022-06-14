@@ -5,7 +5,7 @@ import queries
 
 dbname = 'wuztkssx'
 user = 'wuztkssx'
-password = ''
+password = 'G7TOdoMPcRlt_Enx__bnzcUk-Pt6m3Zb'
 host = 'drona.db.elephantsql.com'
 
 

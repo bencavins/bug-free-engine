@@ -44,6 +44,20 @@ GROUP BY c.character_id
 LIMIT 20;
 """
 
+AVG_CHARACTER_ITEMS = """
+SELECT AVG(item_count)
+FROM 
+(
+SELECT c.character_id, c.name, COUNT(i.item_id) as item_count
+FROM charactercreator_character as c
+JOIN charactercreator_character_inventory as ci
+	ON c.character_id = ci.character_id
+JOIN armory_item as i
+	ON i.item_id = ci.item_id
+GROUP BY c.character_id
+);
+"""
+
 create_character_table = """
 CREATE TABLE IF NOT EXISTS character (
     character_id SERIAL PRIMARY KEY,
